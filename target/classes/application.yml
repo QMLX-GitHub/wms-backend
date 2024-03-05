@@ -1,0 +1,32 @@
+
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/wms02?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: QMLX-9999
+
+
+#日志配置
+logging:
+  level:
+    com.wms : debug
+  pattern:
+    dateformat: HH:mm:dd
+
+#Swagger配置，knife4
+knife4j:
+  enable: true
+  openapi:
+    title: 仓库管理系统接口文档
+    description: "仓库管理系统接口测试文档"
+    email: 2300604302@qq.com
+    group:
+      default :
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - com.wms.controller
